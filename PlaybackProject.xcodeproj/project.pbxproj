@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDC6819D214B9D6400BCAA52 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDC6819C214B9D6400BCAA52 /* example.mp3 */; };
 		DDD67FDB214AB84D00658198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD67FDA214AB84D00658198 /* AppDelegate.swift */; };
 		DDD67FDD214AB84D00658198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD67FDC214AB84D00658198 /* ViewController.swift */; };
 		DDD67FE0214AB84D00658198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD67FDE214AB84D00658198 /* Main.storyboard */; };
 		DDD67FE2214AB84F00658198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD67FE1214AB84F00658198 /* Assets.xcassets */; };
 		DDD67FE5214AB84F00658198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD67FE3214AB84F00658198 /* LaunchScreen.storyboard */; };
+		DDD67FEF214AB86400658198 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD67FEE214AB86400658198 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDC6819C214B9D6400BCAA52 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		DDD67FD7214AB84D00658198 /* PlaybackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaybackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD67FDA214AB84D00658198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD67FDC214AB84D00658198 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,8 @@
 		DDD67FE1214AB84F00658198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDD67FE4214AB84F00658198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDD67FE6214AB84F00658198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD67FEC214AB86400658198 /* PlaybackProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaybackProject.entitlements; sourceTree = "<group>"; };
+		DDD67FEE214AB86400658198 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD67FEF214AB86400658198 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				DDD67FD9214AB84D00658198 /* PlaybackProject */,
 				DDD67FD8214AB84D00658198 /* Products */,
+				DDD67FED214AB86400658198 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +61,8 @@
 		DDD67FD9214AB84D00658198 /* PlaybackProject */ = {
 			isa = PBXGroup;
 			children = (
+				DDD67FEC214AB86400658198 /* PlaybackProject.entitlements */,
+				DDC6819C214B9D6400BCAA52 /* example.mp3 */,
 				DDD67FDA214AB84D00658198 /* AppDelegate.swift */,
 				DDD67FDC214AB84D00658198 /* ViewController.swift */,
 				DDD67FDE214AB84D00658198 /* Main.storyboard */,
@@ -62,6 +71,14 @@
 				DDD67FE6214AB84F00658198 /* Info.plist */,
 			);
 			path = PlaybackProject;
+			sourceTree = "<group>";
+		};
+		DDD67FED214AB86400658198 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDD67FEE214AB86400658198 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +113,14 @@
 				TargetAttributes = {
 					DDD67FD6214AB84D00658198 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC6819D214B9D6400BCAA52 /* example.mp3 in Resources */,
 				DDD67FE5214AB84F00658198 /* LaunchScreen.storyboard in Resources */,
 				DDD67FE2214AB84F00658198 /* Assets.xcassets in Resources */,
 				DDD67FE0214AB84D00658198 /* Main.storyboard in Resources */,
@@ -280,7 +306,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PlaybackProject/PlaybackProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9232HDTN9M;
 				INFOPLIST_FILE = PlaybackProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,7 +325,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PlaybackProject/PlaybackProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9232HDTN9M;
 				INFOPLIST_FILE = PlaybackProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
